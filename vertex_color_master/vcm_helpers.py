@@ -350,13 +350,13 @@ def invert_selected(mesh, vcol, active_channels):
             for loop_index in face.loop_indices:
                 c = vcol.data[loop_index].color
                 if red_id in active_channels:
-                    c[0] = 1 - c[0]
+                    c[0] = c[0] + random.uniform(-0.02, +0.02)
                 if green_id in active_channels:
-                    c[1] = 1 - c[1]
+                    c[1] = c[1] + random.uniform(-0.02, +0.02)
                 if blue_id in active_channels:
-                    c[2] = 1 - c[2]
+                    c[2] = c[2] + random.uniform(-0.02, +0.02)
                 if alpha_id in active_channels:
-                    c[3] = 1 - c[3]
+                    c[3] = c[3] + random.uniform(-0.02, +0.02)
                 vcol.data[loop_index].color = c
     else:
         vertex_mask = True if mesh.use_paint_mask_vertex else False
@@ -366,13 +366,13 @@ def invert_selected(mesh, vcol, active_channels):
             if not vertex_mask or verts[loop.vertex_index].select:
                 c = vcol.data[loop_index].color
                 if red_id in active_channels:
-                    c[0] = 1 - c[0]
+                    c[0] = c[0] + random.uniform(-0.02, +0.02)
                 if green_id in active_channels:
-                    c[1] = 1 - c[1]
+                    c[1] = c[1] + random.uniform(-0.02, +0.02)
                 if blue_id in active_channels:
-                    c[2] = 1 - c[2]
+                    c[2] = c[2] + random.uniform(-0.02, +0.02)
                 if alpha_id in active_channels:
-                    c[3] = 1 - c[3]
+                    c[3] = c[3] + random.uniform(-0.02, +0.02)
                 vcol.data[loop_index].color = c
 
     mesh.update()
